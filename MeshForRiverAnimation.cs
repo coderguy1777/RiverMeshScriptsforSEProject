@@ -1,19 +1,39 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using Unity.Engine;
+using Unity.Editor;
 using System.Collections;
 
-public class MeshClassForRiverMesh
-{
+public class MeshClassForRiverMesh : MonoBehavior { 
     public MeshXVector Vector3;
     public MeshYVector Vector3;
     public MeshZVector Vector3;
     public int[] Verticies;
     public int[] Polygons;
     public int[] newUVMap;
-
     public float MeshSizeControl = 1000f;
     public int MaximumMeshSizeHeight = 1000;
     public int MaximumMeshSizeWidth = 1000;
+
+    void Start()
+    {
+        addingtheMesh();
+        MeshStartingXVector Vector3 = new Vector3(MeshXVector(100f, 0.0f, 0.0f));
+        MeshStartingYVector Vector3 = new Vector3(MeshYVector(0.0f, 100f, 0.0f));
+        MeshStartingXVector Vector3 = new Vector3(MeshZVector(0.0f, 0.0f, 100f));
+
+    }
+
+    void Update()
+    {
+        float VerticeChange = 1000f;
+        while (addingtheMesh()) 
+        {
+            int[]Polygons = new int[MeshStartingXVector * MeshStartingYVector * MeshStartingZVector];
+            int AllMeshVectors = MeshXVector * MeshYVector, MeshZVector;
+            game.
+        }
+
+        
+    }
 
     void MeshFunction()
     {
@@ -55,8 +75,6 @@ public class MeshClassForRiverMesh
         gameObject.AddComponent<MeshRenderer>;
         RiverMesh = GetComponent<MeshFilter>.mesh();
         mesh.clear();
-
-
     }
 }
 
